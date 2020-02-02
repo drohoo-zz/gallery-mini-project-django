@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: "Open Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.myBtnContainer {
+    text-align: center;
+}
+
+div.gallery {
+  margin: 5px;
+  float: left;
+  transition: transform .2s;
+}
+
+div.gallery:hover {
+     transform: scale(1.2);
+}
+
+
+div.gallery img {
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+
+    padding: 0 4px;
+    margin-top: 8px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

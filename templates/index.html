@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+  <title>Gallery</title>
+  <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<h1>My gallery</h1>
+<div class="myBtnContainer">
+  <button class="btn active" onclick="showAll()"> Show all</button>
+  <button class="btn" onclick="filterSelection('Ja')"> My pictures</button>
+  <button class="btn" onclick="filterSelection('Other')">Other pictures</button>
+</div>
+<div class="wrapper">
+{% for photo in photos %}
+<div class="gallery {{photo.author}}">
+    <img src="{{photo.image}}">
+</div>
+{% endfor %}
+</div>
+<script>
+
+  function filterSelection(param) {
+      document.querySelectorAll('.gallery').forEach(img => img.style.display = "none")
+      document.querySelectorAll(`.${param}`).forEach(img => img.style.display = "block")
+  }
+
+  function showAll() {
+     document.querySelectorAll('.gallery').forEach(img => img.style.display = "block")
+  }
+
+</script>
+</body>
+</html>
